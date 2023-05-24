@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="main-container">
+    <div>
+        {% include 'base/topic_component.html' %}
+    </div>
+    
+    <div>
+        <div class="profile-name"><h2>{{profile_user}}</h2></div>
+        <div class="profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur non sit nobis corporis quos voluptatum quia cupiditate pariatur. Asperiores recusandae impedit a quod cumque praesentium! Consequuntur ratione suscipit excepturi id.</div>
+        {% include 'base/room_component.html' %}
+    </div>
+    
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+   
+
+</div>
+
+{% endblock %}

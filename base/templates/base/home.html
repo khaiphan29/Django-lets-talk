@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="main-container">
+    <div>
+        {% include 'base/topic_component.html' %}
+    </div>
+
+    <div>
+        {% include 'base/room_component.html' %}
+    </div>
+
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+
+</div>
+
+
+{% endblock %}

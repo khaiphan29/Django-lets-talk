@@ -1,0 +1,43 @@
+<div class="room-container">
+    {% if page != 'profile' %}
+    <div class="room-header">
+        <div class="room-count">{{ room_count }} available rooms</div>
+        {% if request.user.is_authenticated %}
+        <a class="create-room" href="{% url 'create_room' %}">Create Room</a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="room-list">
+        {% for room in rooms %}
+
+        <div class="room-element">
+
+            <div class="room-first-line">
+                <h5><a class="room-title" href="{% url 'room' room.id %}">{{room.name}}</a></h5>
+                {% if request.user == room.host %}
+                <a class="room-button" href="{% url 'update-room' room.id %}">Edit</a>
+                <a class="room-button room-button-delete" href="{% url 'delete-room' room.id %}">Delete</a>
+                {% endif %}
+            </div>
+
+            <div class="room-host">
+                <a href="{% url 'profile' room.host.id %}">@{{room.host.username}}</a>
+            </div>
+            
+
+            <div class="room-participant-container">
+                {% for participant in room.participants.all|slice:":5" %}
+                <div class="room-participant">{{participant}}</div>
+                {% endfor %}
+            </div>
+            
+            <div class="room-bottom-container">
+                <div class="room-participant-count">{{room.participants.all.count}} participants</div>
+                <a class="room-topic" href="{% url 'home' %}?topic={{room.topic}}">{{room.topic}}</a>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="activity-container">
+    <h3>Activity Feed</h3>
+
+    <div class="activity-list">
+        {% for msg in room_messages %}
+
+        <div class="activity-element">
+            <div class="message-info-container">
+                <a class="message-user" href="{% url 'profile' msg.user.id %}">@{{msg.user}}</a>
+                <div class="message-created-time">{{msg.created | timesince}} ago</div>
+                <div class="message-reply-to">replied to {{msg.room}}</div>
+            </div>
+
+            <div class="message-body">
+                <p>{{msg.body}}</p>
+            </div>
+            
+            {% if msg.user == request.user %}
+            <a class="message-delete-button" href="{% url 'delete-message' msg.id %}">Delete</a>
+            {%endif%}
+        </div>
+
+        {%endfor%}
+    </div>
+    
+</div>
+
+

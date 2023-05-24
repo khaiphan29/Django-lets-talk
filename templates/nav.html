@@ -1,0 +1,32 @@
+{% load static %}
+
+<nav>
+    <div class="nav-logo">
+        <a href="/"><img src="{% static 'images/logo.png' %}" alt="Logo image"></a>
+    </div>
+    
+
+    <div class="nav-search">
+        <form action="{% url 'home' %}">
+            <input type="text" name="q" placeholder="Search Rooms....">
+        </form>
+    </div>
+
+    <ul>
+        {% if not request.user.is_authenticated %}
+        <li>
+            <a href="{% url 'login' %}">Login</a>
+        </li>
+        <li>
+            <a href="{% url 'register' %}">Register</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{% url 'profile' request.user.id %}">{{request.user.username}}</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}"><img class="logout-img" src="{% static 'images/log-out.png' %}" alt="logout image"></a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

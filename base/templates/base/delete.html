@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="delete-container single-form-container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p class="delete-notification">Are you sure you want to delete "{{obj}}"?</p>
+        <div class="button-container">
+            <a class="room-button" href="{{request.META.HTTP_REFERER}}">Go Back</a>
+            <input class="room-button room-button-delete" type="submit" value="Confirm">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

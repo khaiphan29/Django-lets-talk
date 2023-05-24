@@ -1,0 +1,13 @@
+
+
+<div class="topic-component">
+    <h3 class="topic-header" >Topics</h3>
+    <div class="topic-element">
+        <a href="{% url 'home' %}">All</a>
+    </div>
+    {% for topic in topics %}
+    <div class="topic-element">
+        <a href="{% url 'home' %}?topic={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+</div>

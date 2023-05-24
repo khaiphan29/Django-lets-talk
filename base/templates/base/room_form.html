@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="single-form-container room-create-form">
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <div class="form-fields">
+            <label>Topic</label>
+            {{form.topic}}
+        </div>
+        <div class="form-fields">
+            <label>Room Name</label>
+            {{form.name}}
+        </div>
+        <div class="form-fields">
+            <label>Description</label>
+            {{form.description}}
+        </div>
+        <div class="form-submit-button"><input type="submit" value="Submit"></div>
+        <div class="form-submit-button"><a class="back-button" href="{{request.META.HTTP_REFERER}}">Back</a></div>
+        
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="room-page-container">
+    <div class="room-main-component">
+        <div class="room-header-wrapper">
+            <a class="back-button" href="{{request.META.HTTP_REFERER}}">Back</a>
+            <h1 class="room-name">{{room.name}}</h1>
+            <div class="room-created">created {{room.created | timesince}} ago</div>
+            <p class="room-description">{{room.description}}</p>
+        </div>
+        
+
+        <div class="conversation-wrapper">
+            <div class="message-thread">
+                {% for message in room_messages %}
+                <div class="room-message">
+                    <a class="message-user" href="{% url 'profile' message.user.id %}">@{{message.user}}</a>
+                    <span class="message-created" >{{message.created | timesince}} ago</span>
+                    
+                    {% if request.user == message.user %}
+                    <a class="room-button room-button-delete" href="{% url 'delete-message' message.id %}">Delete</a>
+                    {% endif %}
+                    
+                    <p class="message-body">{{message.body}}</p>
+                </div>
+
+                {% endfor %}
+            </div>
+            
+            {% if request.user.is_authenticated %}
+            <div class="message-form">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" autocomplete="off" name="body" placeholder="Write your comment...">
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+    <div class="room-participant-component">
+        <h2>Participants</h2>
+
+
+        <div class="room-participant-container">
+        {% for participant in participants %}
+            <div class="room-participant">
+                <a href="{% url 'profile' participant.id %}">@ {{participant}}</a>
+            </div>
+        {%endfor%}
+
+         </div>
+    </div>
+</div>
+
+
+{% endblock %}

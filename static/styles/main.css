@@ -1,0 +1,511 @@
+/* || General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  background-color: #f2efe5;
+}
+
+a {
+  text-decoration: none;
+  color: #020100;
+}
+
+.single-form-container {
+  width: 100vw;
+  height: fit-content;
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-form-container form {
+  background-color: #e3ddca;
+  padding: 20px 40px;
+  border-radius: 25px;
+  border: 1px solid #0201001f;
+}
+
+.back-button {
+  font-size: 12px;
+  background-color: #cadbe3;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.form-fields {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields label {
+  font-size: 14px;
+  margin: 10px 0px 5px 10px;
+}
+
+.form-fields select {
+  padding: 10px 100px 10px 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.form-fields input {
+  padding: 10px 100px 10px 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.form-fields textarea {
+  padding: 10px 100px 10px 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.form-submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit-button input {
+  background-color: #56ab69;
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: 0;
+  margin-top: 5px;
+}
+
+/* || Header and Main Navigation */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  color: #020100;
+  border-bottom: 1px solid #0201001f;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search form {
+  margin: 0;
+}
+
+.nav-search input {
+  padding: 10px 55px 10px 10px;
+  font-size: 12px;
+  border-radius: 25px;
+  vertical-align: middle;
+  border: 2px solid #0201001f;
+  background-color: #e3ddca;
+}
+
+.nav-search input::first-line {
+  display: inline-block;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #020100;
+  font-size: medium;
+  font-weight: bold;
+}
+
+nav .logout-img {
+  height: 25px;
+}
+
+/* || Blueprint for pages */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1.5fr;
+}
+
+/* || Topic component*/
+
+.topic-component {
+  margin: 25px 15px;
+  padding: 25px 20px;
+  background-color: #e6e3d8;
+  border-radius: 32px;
+}
+
+.topic-header {
+  color: #020100;
+  font-weight: bolder;
+}
+
+.topic-element {
+  font-weight: 600;
+  margin: 10px 10px 10px 0px;
+}
+
+.topic-element a:hover {
+  color: #56ab69;
+}
+
+/* || Room component*/
+
+.room-container {
+  margin: 0px 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.room-container .create-room {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: #e3ddca;
+  font-size: 14px;
+  width: fit-content;
+  margin: 10px 10px 10px 0px;
+}
+
+.room-count {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.room-element {
+  margin: 20px 0px;
+  background-color: white;
+  border-radius: 32px;
+  padding: 20px;
+}
+
+.room-first-line {
+  display: flex;
+  align-items: center;
+}
+
+.room-title {
+  font-size: 14px;
+}
+
+.room-button {
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 15px;
+  background-color: #56ab691f;
+  padding: 5px 10px;
+  border-radius: 25px;
+  color: #56ab69;
+}
+
+.room-button-delete {
+  background-color: #ff5a5f1f;
+  color: #ff5a5f;
+}
+
+.room-host {
+  margin: 5px 0px;
+}
+
+.room-host a {
+  font-size: 12px;
+  color: #56ab69;
+}
+
+.room-participant-container {
+  margin: 10px 0px;
+}
+
+.room-participant {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.room-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #0201001f;
+  margin-top: 20px;
+  padding: 10px 5px 0px 5px;
+}
+
+.room-participant-count {
+  font-size: 12px;
+}
+
+.room-topic {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* || Activity component*/
+
+.activity-container {
+  margin: 25px 15px;
+  padding: 25px;
+  border-radius: 32px;
+  background-color: #e6e3d8;
+}
+
+.activity-list {
+  margin: 10px 0px;
+}
+
+.activity-element {
+  border: 1px solid #0201001f;
+  border-radius: 32px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.activity-element .message-info-container {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.activity-element .message-user {
+  color: #56ab69;
+}
+
+.activity-element .message-created-time {
+  font-size: 10px;
+  color: #02010087;
+  margin: 2px 0px;
+}
+
+.activity-element .message-reply-to {
+  padding-left: 0px;
+}
+
+.activity-element .message-body {
+  background-color: #aba85641;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin: 10px 0px;
+}
+
+.activity-element .message-body p {
+  color: #020100;
+  font-size: 13px;
+}
+
+.activity-element .message-delete-button {
+  background-color: #ff5a5f1f;
+  color: #ff5a5f;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+/* || Profile page */
+.profile-name {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-description {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 55px;
+}
+
+/* || Room page */
+
+.room-page-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.room-page-container .room-main-component {
+  background-color: #e3ddca;
+  border-radius: 32px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.room-page-container .room-header-wrapper {
+  padding: 10px 20px;
+}
+
+.room-page-container .back-button {
+  font-size: 12px;
+  background-color: #cadbe3;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.room-page-container .room-name {
+  margin-top: 10px;
+}
+
+.room-page-container .room-created {
+  font-size: 12px;
+}
+
+.room-page-container .room-description {
+  margin: 10px 0px;
+  font-size: 14px;
+}
+
+.room-page-container .conversation-wrapper {
+  background-color: #ffffff85;
+  border-radius: 32px;
+  padding: 20px;
+  border: 1px solid #0201001f;
+}
+
+.room-page-container .room-message {
+  border-left: 1px solid #0201001f;
+  margin: 10px 0px;
+  padding: 20px 10px;
+}
+
+.room-page-container .message-created {
+  font-size: 10px;
+}
+
+.room-page-container .message-user {
+  font-size: 12px;
+  color: #56ab69;
+}
+
+.room-page-container .message-thread {
+  overflow-y: auto;
+  height: 50vh;
+}
+
+.room-page-container .message-body {
+  font-size: 12px;
+  margin: 5px 0px 0px 0px;
+  border-radius: 15px;
+}
+
+.room-page-container .message-form {
+  margin: 10px 0px;
+}
+
+.room-page-container .message-form input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 32px;
+  background-color: #ffffffbf;
+  border: 0px;
+  font-size: 10px;
+}
+
+.room-page-container .room-participant-component {
+  background-color: #e3ddca;
+  border-radius: 32px;
+  padding: 25px;
+  margin: 30px 30px 30px 0px;
+  overflow-y: scroll;
+}
+
+.room-page-container .room-participant-container {
+  margin-top: 10px;
+}
+
+.room-page-container .room-participant {
+  margin-top: 5px;
+}
+
+.room-page-container .room-participant a {
+  font-size: 14px;
+  color: #56ab69;
+}
+
+/* || Delete page */
+.delete-container {
+  background-color: #ffffff;
+}
+
+.delete-container form {
+  margin: auto;
+  border: 1px solid #020100;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.delete-container .button-container {
+  margin: 20px 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.delete-container .room-delete-button {
+  border: 0px;
+}
+
+/* || Login page */
+
+.login-container {
+}
+
+.login-container p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.login-container p a {
+  color: #56ab69;
+}
+
+/* || Room creation form */
+.room-create-form {
+  height: fit-content;
+}
+
+.room-create-form form {
+  margin: 20px 0px;
+}
+
+/* || register form */
+.register-form p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.register-form p a {
+  color: #56ab69;
+}
+
+.register-form label input {
+  margin-left: -10px;
+  margin-top: 5px;
+  padding: 10px 100px 10px 10px;
+}
