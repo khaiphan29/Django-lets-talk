@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -10,6 +11,29 @@ from .models import *
 from .forms import *
 
 # Create your views here.
+@csrf_protect
+def search_room(request):
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest': #check is Ajax
+        if request.POST.get('room'):
+            query = request.POST.get('room')
+            rooms = Room.objects.filter(
+                Q(topic__name__icontains=query) |
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+            )
+            if rooms:
+                data = []
+                for room in rooms:
+                    data.append({
+                        'id': room.id,
+                        'name': room.name
+                    })
+            else:
+                data = "No room found..."
+            return JsonResponse({'data': data})
+    return JsonResponse({})
+
+
 def home(request):
     if request.GET.get('q'):
         q = request.GET.get('q')

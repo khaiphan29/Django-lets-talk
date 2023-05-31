@@ -108,7 +108,7 @@ nav {
 }
 
 .nav-search input {
-  padding: 10px 55px 10px 10px;
+  padding: 10px 150px 10px 10px;
   font-size: 12px;
   border-radius: 25px;
   vertical-align: middle;
@@ -118,6 +118,37 @@ nav {
 
 .nav-search input::first-line {
   display: inline-block;
+}
+
+#livesearch-result {
+  visibility: hidden;
+  position: absolute;
+  width: auto;
+  background: #e3ddca;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  border: 1px solid #0201001f;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+
+  /*This is relative to the navbar now 370 420*/
+  /* left: 25%;
+  right: 25%; */
+  top: 60px;
+}
+
+#livesearch-result div {
+  margin: 0 auto 5px 0;
+}
+
+#livesearch-result a {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 nav ul {

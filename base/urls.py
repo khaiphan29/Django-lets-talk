@@ -14,4 +14,7 @@ urlpatterns = [
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),
     path('delete-room/<str:pk>/', views.deleteRoom, name="delete-room"),
     path('delete-message/<str:pk>/', views.deleteMessage, name="delete-message"),
+
+    #rest api
+    path('search-room', views.search_room, name="search-room")
 ]
